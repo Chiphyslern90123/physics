@@ -1,0 +1,35 @@
+name: 回報問題
+description: 考卷缺頁、檔案不齊、格式跑掉、圖或答案有錯……
+title: "[回報] "
+labels: ["回報"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: 哪一份資料
+      description: 從網站按「回報」會自動填好；直接開表單的話，寫標題即可
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 問題類型
+      options:
+        - 缺頁、頁面空白或順序錯
+        - 少了詳解、檔案打不開或不齊
+        - 公式或版面跑掉
+        - 圖錯了或看不清楚
+        - 題目或答案有錯
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: 第幾頁／第幾題
+      placeholder: 例如：第 3 頁、第 12 題、詳解第 2 頁
+  - type: textarea
+    id: detail
+    attributes:
+      label: 說明
+      description: 看到什麼、應該是什麼。可以直接貼截圖（Ctrl + V）。
